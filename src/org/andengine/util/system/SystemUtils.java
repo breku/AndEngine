@@ -1,16 +1,5 @@
 package org.andengine.util.system;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.lang.reflect.Method;
-import java.util.Scanner;
-import java.util.regex.MatchResult;
-
-import org.andengine.util.StreamUtils;
-import org.andengine.util.adt.data.constants.DataConstants;
-import org.andengine.util.exception.AndEngineException;
-import org.andengine.util.exception.MethodNotFoundException;
-
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
@@ -21,6 +10,16 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Debug;
 import android.os.Debug.MemoryInfo;
+import org.andengine.util.StreamUtils;
+import org.andengine.util.adt.data.constants.DataConstants;
+import org.andengine.util.exception.AndEngineException;
+import org.andengine.util.exception.MethodNotFoundException;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.reflect.Method;
+import java.util.Scanner;
+import java.util.regex.MatchResult;
 
 /**
  * (c) 2010 Nicolas Gramlich
@@ -122,7 +121,7 @@ public final class SystemUtils {
 	public static boolean isNDKSupported(final Context pContext, final boolean pDefault) {
 		try {
 			if (SystemUtils.isGoogleTV(pContext)) {
-				if (SystemUtils.isAndroidVersionOrHigher(Build.VERSION_CODES.JELLY_BEAN_MR1)) {
+				if (SystemUtils.isAndroidVersionOrHigher(Build.VERSION_CODES.JELLY_BEAN)) {
 					return true;
 				} else {
 					return false;
